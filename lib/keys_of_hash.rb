@@ -1,5 +1,13 @@
 class Hash
-  def keys_of(arguments)
-    # code goes here
+  def keys_of(*arguments)
+    array_out = []
+    self.each do |key, value|
+      arguments.each do |x|
+        if x == value
+          array_out << key
+        end
+      end
+    end
+    return array_out
   end
 end
